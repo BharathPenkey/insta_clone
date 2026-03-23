@@ -32,7 +32,7 @@ function Form(){
                 PostImage:data.url,
                 date:up_date
             }
-             axios.post('https://insta-back-6ed7.onrender.com/posts',newpost)//
+             axios.post('https://insta-clone-ld6n.onrender.com/posts',newpost)//
             
             })
         .catch(err=>console.log(err))
