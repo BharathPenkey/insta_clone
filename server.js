@@ -33,9 +33,19 @@ const mongoose= require("mongoose");
 
 app.use(cors());
 app.use(express.json());
+const connectDB = async ()=>{
+   try{
+     await mongoose.connect("mongodb+srv://penkybharath:penkybharath@cluster0.l1d1qzf.mongodb.net/instaData"); //  no symbols like < @
+    console.log("Connected to DB Successfully")
+   }
+   catch(err){
+    console.error("DB Error:", err);
+    process.exit(1) ; // stops the  server
+   }
 
-
-mongoose.connect("mongodb+srv://bharath:bharath@cluster0.w1gr51t.mongodb.net/insta_DB")
+}
+connectDB();
+// mongoose.connect("mongodb+srv://bharath:bharath@cluster0.w1gr51t.mongodb.net/insta_DB")
 app.use("/",require("./route"));
 app.listen(3001,function(){
     console.log("server is running on port 3001")
