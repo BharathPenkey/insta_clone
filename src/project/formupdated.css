@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ---------------- HEADER ---------------- */
+.main-header {
+  height: 70px;
+  padding: 0 5%;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Left logo */
+.insta_logo {
+  width: 40px;
+  height: 40px;
+}
+
+/* Center text */
+.tag {
+  font-size: 22px;
+  font-weight: 600;
+  color: #e4405f;
+}
+
+/* Right icon */
+.cam_logo {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cam_logo:hover {
+  transform: scale(1.1);
+}
+
+/* ---------------- FORM ---------------- */
+form {
+  width: 100%;
+  max-width: 450px;
+  margin: 60px auto;
+  padding: 25px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Section layout */
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #e4405f;
+  box-shadow: 0 0 6px rgba(228, 64, 95, 0.3);
+}
+
+/* File input */
+#myfile {
+  padding: 8px;
+  background: #fafafa;
+}
+
+/* Button */
+#btn {
+  /* padding: 12px; */
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #e4405f, #ff7a18);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(228, 64, 95, 0.4);
+}
+
+/* ---------------- TABLET (<= 768px) ---------------- */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 0 20px;
+  }
+
+  .tag {
+    font-size: 20px;
+  }
+
+  form {
+    margin: 40px 20px;
+  }
+}
+
+/* ---------------- MOBILE (<= 480px) ---------------- */
+@media (max-width: 480px) {
+
+  .main-header {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  .insta_logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cam_logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .tag {
+    font-size: 16px;
+  }
+
+  form {
+    margin: 20px 10px;
+    padding: 18px;
+  }
+
+  input {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  #btn {
+    font-size: 14px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding: 10px;
+  }
+}
+
+/* ---------------- LARGE SCREENS (>= 1200px) ---------------- */
+@media (min-width: 1200px) {
+  form {
+    max-width: 500px;
+  }
+}
