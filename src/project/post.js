@@ -22,7 +22,7 @@ function Post(){
     ]);
     const all_posts=[];
     useEffect( ()=>{
-         fetch("https://insta-back-6ed7.onrender.com/posts") //
+         fetch("https://insta-clone-ld6n.onrender.com/posts") // https://insta-clone-ld6n.onrender.com/posts
         .then(res=>res.json())
         .then(data=>{setData(data)
              })
