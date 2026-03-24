@@ -33,7 +33,7 @@ router.route("/posts").get( async (req,res)=>{
 });
 
 // put api 
-app.put("/post/:id/like", async (req, res) => {
+router.put("/post/:id/like", async (req, res) => {
   try {
     const updatedPost = await Post.findByIdAndUpdate(
       req.params.id,
