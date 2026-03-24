@@ -1,6 +1,6 @@
 const express = require("express");
 const router= express.Router();
-const Post = require("../Models/UserModel");
+const Post = require("../model");
 
 async function fixLikes() {
   try {
