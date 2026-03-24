@@ -3,7 +3,7 @@ const mongoose=require("mongoose");
 const postSchema ={
     name:String,
     location:String,
-    likes:String,
+    likes:Number,
     description:String,
     PostImage:String,
     date:String
