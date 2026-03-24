@@ -33,20 +33,23 @@ router.route("/posts").get( async (req,res)=>{
 });
 
 // put api 
-router.put("/post/:id/like", async (req, res) => {
-    const value = req.body.value ; // +1 or -1
+app.put("/post/:id/like", async (req, res) => {
+  try {
+    const updatedPost = await Post.findByIdAndUpdate(
+      req.params.id,
+      {
+        $inc: { likes: 1 }   // always increment by 1
+      },
+      { new: true }
+    );
 
-    try {
-        const updatedPost = await Post.findByIdAndUpdate(
-            req.params.id,
-            { $inc: { likes: value } },
-            { new: true }   
-        );
-
-        res.json({ status: "success", result: updatedPost });
-    } catch (e) {
-        res.json({ status: "failed", result: e.message });
-    }
+    res.json(updatedPost);
+  } catch (err) {
+    res.status(500).json({
+      status: "failed",
+      result: err.message
+    });
+  }
 });
 module.exports= router;
 
