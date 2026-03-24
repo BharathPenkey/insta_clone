@@ -32,7 +32,22 @@ router.route("/posts").get( async (req,res)=>{
     .then((data)=>res.json(data))
 });
 
+// put api 
+router.put("/post/:id/like", async (req, res) => {
+    const value = req.body.value ; // +1 or -1
 
+    try {
+        const updatedPost = await Post.findByIdAndUpdate(
+            req.params.id,
+            { $inc: { likes: value } },
+            { new: true }   
+        );
+
+        res.json({ status: "success", result: updatedPost });
+    } catch (e) {
+        res.json({ status: "failed", result: e.message });
+    }
+});
 module.exports= router;
 
 
